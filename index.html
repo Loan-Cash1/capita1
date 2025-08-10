@@ -10,7 +10,6 @@
       --card:#ffffff;
       --accent:#0b66ff;
       --muted:#666;
-      --glass: rgba(255,255,255,0.6);
       --shadow: 0 6px 20px rgba(12,30,60,0.08);
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial;
     }
@@ -20,38 +19,35 @@
       background: linear-gradient(180deg, #eef4ff 0%, var(--bg) 100%);
       color:#0b2233;
       min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
+      padding:16px;
     }
 
-    /* Top bar */
     .topbar{
       position:fixed;
-      top:16px;
-      left:16px;
-      right:16px;
-      height:56px;
+      top:10px;
+      left:10px;
+      right:10px;
+      height:50px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      background: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.9);
       backdrop-filter: blur(6px);
-      padding:0 18px;
-      border-radius:12px;
+      padding:0 14px;
+      border-radius:10px;
       box-shadow:var(--shadow);
       z-index:100;
     }
-    .brand{font-weight:700; font-size:18px; letter-spacing:0.6px}
+    .brand{font-weight:700; font-size:16px; letter-spacing:0.5px}
     .lang-toggle button{
-      margin-left:8px;
+      margin-left:6px;
       border:1px solid #e6ecff;
-      padding:8px 12px;
+      padding:6px 10px;
       border-radius:8px;
       background:transparent;
       cursor:pointer;
       font-weight:600;
+      font-size:13px;
     }
     .lang-toggle button.active{
       background:var(--accent);
@@ -59,117 +55,92 @@
       border-color:transparent;
     }
 
-    /* Card */
     .container{
       width:100%;
-      max-width:920px;
-      margin-top:90px;
+      max-width:100%;
+      margin-top:70px;
       background:var(--card);
-      border-radius:16px;
-      padding:28px;
+      border-radius:12px;
+      padding:18px;
       box-shadow:var(--shadow);
     }
-    h1{margin:0 0 8px 0; font-size:20px}
-    p.lead{margin:0 0 18px 0; color:var(--muted)}
+    h1{margin:0 0 8px 0; font-size:18px}
+    p.lead{margin:0 0 14px 0; color:var(--muted); font-size:14px}
 
-    /* layout */
-    .step {
-      display:none;
-    }
+    .step {display:none;}
     .step.active{display:block}
 
-    .row{display:flex; gap:20px; align-items:center;}
-    .col{flex:1}
-
     .slider-wrap{
-      background:linear-gradient(180deg,#fbfdff,#f7fbff);
-      padding:18px;
-      border-radius:12px;
+      padding:14px;
+      border-radius:10px;
       border:1px solid #eef6ff;
+      background:#f9fbff;
     }
     .value-display{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
-      margin-bottom:12px;
+      font-size:14px;
+      margin-bottom:10px;
     }
-    .amount{font-size:22px; font-weight:700}
-    .mini{font-size:13px; color:var(--muted)}
+    .amount{font-size:20px; font-weight:700}
 
     input[type=range]{
       width:100%;
       appearance:none;
-      height:10px;
+      height:8px;
       background:linear-gradient(90deg,var(--accent) 0%, #e6efff 0%);
       border-radius:8px;
       outline:none;
     }
     input[type=range]::-webkit-slider-thumb{
       -webkit-appearance:none;
-      width:22px;height:22px;border-radius:50%;
-      background:var(--accent); border:4px solid white; box-shadow:0 4px 10px rgba(11,102,255,0.18);
+      width:20px;height:20px;border-radius:50%;
+      background:var(--accent); border:3px solid white; box-shadow:0 4px 10px rgba(11,102,255,0.18);
     }
 
-    .actions{display:flex; gap:10px; margin-top:18px; justify-content:flex-end}
+    .actions{display:flex; gap:8px; margin-top:14px; justify-content:flex-end}
     button.btn{
-      padding:10px 16px; border-radius:10px; border:0; cursor:pointer; font-weight:700;
+      padding:8px 14px; border-radius:8px; border:0; cursor:pointer; font-weight:700; font-size:14px;
     }
     .btn.primary{background:var(--accent); color:white}
-    .btn.ghost{background:transparent; border:1px solid #dfe9ff; color:var(--muted)}
 
-    /* results */
     .card{
       background:#fff;
-      padding:16px;
-      border-radius:12px;
+      padding:12px;
+      border-radius:10px;
       border:1px solid #f0f6ff;
     }
-    .result-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:12px}
-    .result-item{padding:12px; background:#fbfdff; border-radius:10px; text-align:center; border:1px solid #eef6ff;}
-    .result-item h3{margin:0;font-size:14px;color:var(--muted)}
-    .result-item p{margin:8px 0 0 0;font-weight:700;font-size:16px}
-
-    /* responsive */
-    @media (max-width:720px){
-      .row{flex-direction:column}
-      .result-grid{grid-template-columns:repeat(1,1fr)}
-      .topbar{left:10px;right:10px}
-    }
+    .result-grid{display:grid; grid-template-columns:repeat(1,1fr); gap:10px; margin-top:10px}
+    .result-item{padding:10px; background:#fbfdff; border-radius:8px; text-align:center; border:1px solid #eef6ff;}
+    .result-item h3{margin:0;font-size:13px;color:var(--muted)}
+    .result-item p{margin:6px 0 0 0;font-weight:700;font-size:15px}
   </style>
 </head>
 <body>
 
-  <div class="topbar" role="banner" aria-label="Top navigation">
+  <div class="topbar">
     <div class="brand">Capital lanka</div>
-    <div class="lang-toggle" aria-hidden="false">
+    <div class="lang-toggle">
       <button id="lang-en" class="active">English</button>
       <button id="lang-si">සිංහල</button>
     </div>
   </div>
 
-  <main class="container" role="main">
-    <section id="step1" class="step active" aria-labelledby="step1-title">
-      <h1 id="step1-title">ගෙවිය යුතු මුදල තෝරන්න</h1>
-      <p class="lead">පහලින් slider එක ගහලා ඔබට අවශ්‍ය මුදල තෝරන්න. ඉදිරියට යාමට "ඉදිරියට යන්න" ඔබන්න.</p>
+  <main class="container">
+    <!-- Step 1 -->
+    <section id="step1" class="step active">
+      <h1>ගෙවිය යුතු මුදල තෝරන්න</h1>
+      <p class="lead">Slider එකෙන් මුදල තෝරන්න. ඉදිරියට යන්න.</p>
 
       <div class="slider-wrap">
         <div class="value-display">
           <div>
-            <div class="mini">තෝරාගත් මුදල</div>
+            <div>තෝරාගත් මුදල</div>
             <div class="amount" id="amountDisplay">රු. 40,000</div>
           </div>
-          <div style="text-align:right">
-            <div class="mini">දකුණු/වම් ඒකක</div>
-            <div class="mini">Range: රු.40,000 - රු.600,000</div>
-          </div>
         </div>
-
-        <input type="range" id="amountSlider" min="40000" max="600000" step="10000" value="40000" aria-label="Amount slider" />
-
-        <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--muted); margin-top:8px">
-          <span>රු.40k</span><span>රු.200k</span><span>රු.400k</span><span>රු.600k</span>
-        </div>
+        <input type="range" id="amountSlider" min="40000" max="600000" step="10000" value="40000" />
       </div>
 
       <div class="actions">
@@ -177,75 +148,39 @@
       </div>
     </section>
 
-    <section id="step2" class="step" aria-labelledby="step2-title">
-      <h1 id="step2-title">පෙළගැස්වීම — ගණනය</h1>
-      <p class="lead">ඔබ තෝරාපු මුදලට අනුව පොලී අනුපාතය 9% වන අතර term එක ස්වයංක්‍රීයව තෝරාගනිමු.</p>
+    <!-- Step 2 -->
+    <section id="step2" class="step">
+      <h1>ප්‍රතිඵල</h1>
+      <p class="lead">පොලී අනුපාතය 9%.</p>
 
-      <div class="row">
-        <div class="col card">
-          <div>
-            <div class="mini">තෝරාගත් මුදල</div>
-            <div style="font-weight:800; font-size:20px" id="showAmount">රු. 40,000</div>
+      <div class="card">
+        <div>තෝරාගත් මුදල: <strong id="showAmount">රු. 40,000</strong></div>
+        <div>Term: <strong id="showTerm">6 months</strong></div>
+        <div>පොලී අනුපාතය: <strong id="showRate">9%</strong></div>
+
+        <div class="result-grid">
+          <div class="result-item">
+            <h3>සම්පූර්ණ මුදල</h3>
+            <p id="totalPay">රු. 0</p>
           </div>
-
-          <div style="margin-top:12px">
-            <div class="mini">තෝරාගත් මාස ගණන (term)</div>
-            <div style="font-weight:700; font-size:18px" id="showTerm">6 months</div>
+          <div class="result-item">
+            <h3>මාසික වාරිකය</h3>
+            <p id="monthlyPay">රු. 0</p>
           </div>
-
-          <div style="margin-top:12px">
-            <div class="mini">පොලී අනුපාතය (annual)</div>
-            <div style="font-weight:700; font-size:18px" id="showRate">9%</div>
-          </div>
-
-          <div style="margin-top:12px">
-            <div class="mini">පෙරනිමිති</div>
-            <small class="mini">(Simple interest used: interest = P * r * (n/12))</small>
-          </div>
-
-          <div style="margin-top:14px; display:flex; gap:8px;">
-            <button class="btn ghost" id="backBtn">පසු</button>
-            <button class="btn primary" id="recalcBtn">නැවත ගණනය කරන්න</button>
+          <div class="result-item">
+            <h3>Interest</h3>
+            <p id="interestPay">රු. 0</p>
           </div>
         </div>
 
-        <div class="col">
-          <div class="card">
-            <div class="mini">ගණනය කරන ලද ප්‍රතිඵල</div>
-            <div class="result-grid" style="margin-top:12px">
-              <div class="result-item">
-                <h3>ගෙවිය යුතු සම්පූර්ණ මුදල</h3>
-                <p id="totalPay">රු. 0</p>
-              </div>
-              <div class="result-item">
-                <h3>මාසික වාරිකය</h3>
-                <p id="monthlyPay">රු. 0</p>
-              </div>
-              <div class="result-item">
-                <h3>මහජන පොලී (interest)</h3>
-                <p id="interestPay">රු. 0</p>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:12px; font-size:13px; color:var(--muted)">
-            <strong>Term mapping:</strong>
-            <ul>
-              <li>රු.40,000 - 80,000 → 6 months</li>
-              <li>රු.80,001 - 150,000 → 9 months</li>
-              <li>රු.150,001 - 300,000 → 16 months</li>
-              <li>රු.300,001 - 500,000 → 24 months</li>
-              <li>රු.500,001 - 600,000 → 30 months</li>
-            </ul>
-          </div>
+        <div class="actions" style="margin-top:16px; justify-content:center">
+          <a href="https://example.com/apply" class="btn primary" style="text-decoration:none; display:inline-block; text-align:center">Apply</a>
         </div>
       </div>
-
     </section>
   </main>
 
 <script>
-  // Helper: format number as "රු. X,XXX"
   function formatLKR(n){
     return 'රු. ' + n.toLocaleString('en-US');
   }
@@ -261,26 +196,22 @@
   const totalPayEl = document.getElementById('totalPay');
   const monthlyPayEl = document.getElementById('monthlyPay');
   const interestPayEl = document.getElementById('interestPay');
-  const backBtn = document.getElementById('backBtn');
-  const recalcBtn = document.getElementById('recalcBtn');
 
-  const RATE = 0.09; // 9% annual
+  const RATE = 0.09; // annual 9%
 
   function updateAmountUI(){
     const val = parseInt(slider.value,10);
     amountDisplay.textContent = formatLKR(val);
   }
-
   slider.addEventListener('input', updateAmountUI);
   updateAmountUI();
 
   function pickTerm(amount){
-    // mapping based on user's spec (fall-through)
     if (amount <= 80000) return 6;
     if (amount <= 150000) return 9;
     if (amount <= 300000) return 16;
     if (amount <= 500000) return 24;
-    return 30; // >500k up to 600k
+    return 30;
   }
 
   function calculateAndShow(){
@@ -288,11 +219,6 @@
     const n = pickTerm(P);
     const r = RATE;
 
-    // Simple interest: Interest = P * r * (n / 12)
-    // total = P + Interest
-    // monthly = total / n
-
-    // step-by-step digit-safe arithmetic:
     const interest = P * r * (n / 12);
     const total = P + interest;
     const monthly = total / n;
@@ -313,25 +239,12 @@
     window.scrollTo({top:0,behavior:'smooth'});
   });
 
-  backBtn.addEventListener('click', function(){
-    step2.classList.remove('active');
-    step1.classList.add('active');
-  });
-
-  recalcBtn.addEventListener('click', function(){
-    calculateAndShow();
-  });
-
-  // language toggle (visual only)
   document.getElementById('lang-en').addEventListener('click', function(){
     this.classList.add('active'); document.getElementById('lang-si').classList.remove('active');
-    // (Could switch labels/content if you add translations)
   });
   document.getElementById('lang-si').addEventListener('click', function(){
     this.classList.add('active'); document.getElementById('lang-en').classList.remove('active');
-    // (Could switch labels/content if you add translations)
   });
-
 </script>
 
 </body>
